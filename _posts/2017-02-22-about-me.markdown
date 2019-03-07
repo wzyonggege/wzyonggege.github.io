@@ -1,0 +1,12 @@
+---
+layout:     post
+title:      "About me"
+subtitle:   "Hello World, Hello Blog"
+date:       2017-02-22 12:00:00
+author:     "Jam"
+header-img: "img/about-bg.jpg"
+tags:
+    - Life
+---
+
+## Hello
