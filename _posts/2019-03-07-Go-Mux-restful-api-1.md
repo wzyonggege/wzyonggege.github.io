@@ -20,7 +20,7 @@ tags:
 
 ### A Basic Web Server
 
-<pre>
+```go
 package main
 
 import (
@@ -39,7 +39,7 @@ func main() {
 	http.ListenAndServe(":8080", nil)
 
 }
-</pre>
+```
 
 > //与http.ServerMux不同的是mux.Router是完全的正则匹配,设置路由路径/index/，如果访问路径/idenx/hello会返回404
 > //设置路由路径为/index/访问路径/index也是会报404的,需要设置r.StrictSlash(true), /index/与/index才能匹配
@@ -49,7 +49,7 @@ func main() {
 
 路径又称"终点"（endpoint），表示API的具体网址。在RESTful架构中，每个网址代表一种资源（resource）。 第三方组件（Gorilla Mux package）： “github.com/gorilla/mux”
 
-<pre>
+```go
 package main
 
 import (
@@ -75,11 +75,11 @@ func main() {
 
 	http.ListenAndServe(":8080", r)
 }
-</pre>
+```
 
 ### 数据模型
 
-<pre>
+```go
 type Route struct {
 	Name        string
 	Method      string
@@ -88,13 +88,13 @@ type Route struct {
 }
 
 type Routes []Route
-</pre>
+```
 
 ### 重构
 
 - routes.go
 
-<pre>
+```go
 package main
 
 import "net/http"
@@ -128,11 +128,11 @@ var routes = Routes{
 		TodoDetailHandler,
 	},
 }
-</pre>
+```
 
 - router.go
 
-<pre>
+```go
 package main
 
 import (
@@ -150,11 +150,11 @@ func NewRouter() *mux.Router {
 	}
 	return router
 }
-</pre>
+```
 
 - handler.go
 
-<pre>
+```go
 package main
 
 import (
@@ -176,11 +176,11 @@ func TodoDetailHandler(w http.ResponseWriter, r *http.Request) {
 	todoId := vars["todoId"]
 	w.Write([]byte("todo id:" + todoId))
 }
-</pre>
+```
 
 - main.go
 
-<pre>
+```go
 package main
 
 import (
@@ -193,13 +193,13 @@ func main() {
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
 
-</pre>
+```
 
 ### Applying the Logger Decorator
 
 - router.go
 
-<pre>
+```go
 func NewRouter() *mux.Router {
  
     router := mux.NewRouter().StrictSlash(true)
@@ -218,11 +218,11 @@ func NewRouter() *mux.Router {
  
     return router
 }
-</pre>
+```
 
 - logger.go
 
-<pre>
+```go
 package main
 
 import (
@@ -246,7 +246,7 @@ func Logger(inner http.Handler, name string) http.Handler {
 		)
 	})
 }
-</pre>
+```
 
 可以看到
 

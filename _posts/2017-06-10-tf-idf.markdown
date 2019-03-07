@@ -6,6 +6,7 @@ date:       2017-06-10 12:00:00
 author:     "Jam"
 header-img: "img/about-bg.jpg"
 tags:
+    - Code
     - TF-IDF
     - Python
 ---
@@ -52,7 +53,7 @@ TF-IDF是一种统计方法，用以评估一字词对于一个文件集或一�
 
 下面遍历所有文件里所有文档来分词
 
-<pre>
+```python
 import jieba  
 
 wordslist = []
@@ -72,11 +73,11 @@ for file in os.listdir('.'):
             seg_list = jieba.cut(content, cut_all=True)
             result = ' '.join(seg_list)
             wordslist.append(result)
-</pre>
+```
 
 文档分词之后还需要去停用词来提高抽取准确性，这里先准备一个停用词字典。
 
-<pre>
+```python
 stop_word = [unicode(line.rstrip()) for line in open('chinese_stopword.txt')]
 
 ...
@@ -89,7 +90,7 @@ for seg in seg_list:
         seg_list_after.append(seg)
 result = ' '.join(seg_list_after)
 wordslist.append(result)
-</pre>
+```
 
 同时，我们还可以新增自选的词典，提高程序纠错能力，例如
 
@@ -111,23 +112,23 @@ CountVectorizer类会将文本中的词语转换为词频矩阵。矩阵中**wor
 
 - get_feature_names()，获取特征整数索引到特征名称映射的数组，即文档中所有关键字的数组。
 
-<pre>
+```python
 vectorizer = CountVectorizer()
 word_frequence = vectorizer.fit_transform(wordslist)
 words = vectorizer.get_feature_names()
-</pre>
+```
 
 而**TfidfTransformer**类用于统计每个词语的TF-IDF值。
 
-<pre>
+```python
 transformer = TfidfTransformer()
 tfidf = transformer.fit_transform(word_frequence)
 weight = tfidf.toarray()
-</pre>
+```
 
 最后按权重大小顺序输出前n位的词语即可
 
-<pre>
+```python
 def titlelist():
     for file in os.listdir('.'):
         if '.' not in file:
@@ -175,7 +176,7 @@ if __name__ == "__main__":
         for i in range(n):
             print u'-{}: {} {}'.format(str(i + 1), words[loc[i]], w[loc[i]])
         print '\n'
-</pre>
+```
 
 运行结果
 

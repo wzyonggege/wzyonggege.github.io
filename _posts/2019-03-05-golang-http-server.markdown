@@ -14,7 +14,7 @@ tags:
 
 ## 服务端
 
-<pre>
+```go
 package main
 
 import (
@@ -31,7 +31,7 @@ func main() {
 	http.HandleFunc("/", sayHello)
 	http.ListenAndServe(":8080", nil)
 }
-</pre>
+```
 
 - HandleFunc 将 handle function 注册给一个pattern（地址）
     - ServeMux，http 请求的多路复用器

@@ -29,7 +29,7 @@ It prints following information.
 
 #### Define variables
 
-<pre>
+```go
 var variableName type = value
 var vname1, vname2, vname3 type = v1, v2, v3
 
@@ -39,7 +39,7 @@ var vname1, vname2, vname3 = v1, v2, v3
 vname1, vname2, vname3 := v1, v2, v3
 
 _, b := 34, 35
-</pre>
+```
 
 #### Constants
 
@@ -51,4 +51,10 @@ const Pi = 3.1415926
 const i = 10000
 const MaxThread = 10
 const prefix = "astaxie_"
+</pre>
+
+#### Elementary types
+
+<pre>
+
 </pre>
