@@ -6,6 +6,7 @@ date:       2017-04-11 12:00:00
 author:     "Jam"
 header-img: "img/about-bg.jpg"
 tags:
+    - Code
     - Python
     - XPath
     - Python library
