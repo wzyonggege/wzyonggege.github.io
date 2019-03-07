@@ -12,7 +12,7 @@ tags:
 
 #### Hello World
 
-<pre>
+```go
 package main
 
 import "fmt"
@@ -20,7 +20,7 @@ import "fmt"
 func main() {
     fmt.Printf("Hello, world or 你好，世界 or Καλημέρα κόσμε or こんにちは世界\n")
 }
-</pre>
+```
 
 It prints following information.
 
@@ -43,7 +43,7 @@ _, b := 34, 35
 
 #### Constants
 
-<pre>
+```go
 const constantName = value
 // you can assign type of constants if it's necessary
 const Pi float32 = 3.1415926
@@ -51,10 +51,10 @@ const Pi = 3.1415926
 const i = 10000
 const MaxThread = 10
 const prefix = "astaxie_"
-</pre>
+```
 
 #### Elementary types
 
-<pre>
+```go
 
-</pre>
+```
