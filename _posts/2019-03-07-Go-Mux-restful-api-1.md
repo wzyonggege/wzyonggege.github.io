@@ -1,10 +1,10 @@
 ---
 layout:     post
-title:      "Making a RESTful JSON API in Go with Mux(1)"
+title:      "Making a RESTful JSON API in Go with Mux"
 subtitle:   ""
 date:       2019-03-07po 12:00:00
 author:     "Jam"
-header-img: "img/_posts/post-golang-bg.jpg"
+header-img: "img/in-post/post-golang-bg.png"
 tags:
     - Code
     - Golang
@@ -194,3 +194,60 @@ func main() {
 }
 
 </pre>
+
+### Applying the Logger Decorator
+
+- router.go
+
+<pre>
+func NewRouter() *mux.Router {
+ 
+    router := mux.NewRouter().StrictSlash(true)
+    for _, route := range routes {
+        var handler http.Handler
+ 
+        handler = route.HandlerFunc
+        handler = Logger(handler, route.Name)
+ 
+        router.
+            Methods(route.Method).
+            Path(route.Pattern).
+            Name(route.Name).
+            Handler(handler)
+    }
+ 
+    return router
+}
+</pre>
+
+- logger.go
+
+<pre>
+package main
+
+import (
+	"log"
+	"net/http"
+	"time"
+)
+
+func Logger(inner http.Handler, name string) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		start := time.Now()
+
+		inner.ServeHTTP(w, r)
+
+		log.Printf(
+			"%s\t%s\t%s\t%s",
+			r.Method,
+			r.RequestURI,
+			name,
+			time.Since(start),
+		)
+	})
+}
+</pre>
+
+可以看到
+
+![img](/img/in-post/post-go-mux-logger.jpg)
