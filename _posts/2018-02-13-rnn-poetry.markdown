@@ -6,7 +6,9 @@ date:       2018-02-13 12:00:00
 author:     "Jam"
 header-img: "img/about-bg.jpg"
 tags:
-    - Life
+    - Python
+    - RNN
+    - Tensorflow
 ---
 
 ## 0. char-rnn
