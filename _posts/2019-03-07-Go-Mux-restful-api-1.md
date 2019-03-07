@@ -12,7 +12,7 @@ tags:
     - RESTful API
 ---
 
-# Making a RESTful JSON API in Go with Mux(1)
+# Making a RESTful JSON API in Go with Mux
 
 ## Making a RESTful JSON API in Go
 
