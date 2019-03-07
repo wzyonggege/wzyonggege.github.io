@@ -4,7 +4,7 @@ title:      "Go搭建HTTP服务器 "
 subtitle:   "In this example you will learn how to create a basic HTTP server in Go. First, let’s talk about what our HTTP server should be capable of. A basic HTTP server has a few key jobs to take care of."
 date:       2019-03-05 12:00:00
 author:     "Jam"
-header-img: "img/_post/post-golang-bg.jpg"
+header-img: "img/_posts/post-golang-bg.jpg"
 tags:
     - Code
     - Golang

@@ -4,7 +4,7 @@ title:      "Making a RESTful JSON API in Go with Mux(1)"
 subtitle:   ""
 date:       2019-03-07po 12:00:00
 author:     "Jam"
-header-img: "img/_post/post-golang-bg.jpg"
+header-img: "img/_posts/post-golang-bg.jpg"
 tags:
     - Code
     - Golang
