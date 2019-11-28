@@ -15,13 +15,14 @@ tags:
 
 > 《统计学习方法》笔记-基于Python算法实现 
 
+<p>
 wzyonggege/statistical-learning-method | 
     <iframe
         style="margin-left: 2px; margin-bottom:-5px;"
         frameborder="0" scrolling="0" width="100px" height="20px"
         src="https://ghbtns.com/github-btn.html?user=wzyonggege&repo=statistical-learning-method&type=star&count=true" >
     </iframe>
-
+</p>
 第一章 最小二乘法
 
 第二章 感知机
