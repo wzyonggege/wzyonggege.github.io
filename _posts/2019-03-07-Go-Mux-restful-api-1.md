@@ -2,7 +2,7 @@
 layout:     post
 title:      "Making a RESTful JSON API in Go with Mux"
 subtitle:   ""
-date:       2019-03-07po 12:00:00
+date:       2019-03-07 12:00:00
 author:     "Jam"
 header-img: "img/in-post/post-golang-bg.png"
 tags:
